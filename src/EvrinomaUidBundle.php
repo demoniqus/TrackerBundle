@@ -1,12 +1,12 @@
 <?php
 
-namespace Evrinoma\UidBundle;
+namespace Demoniqus\UidBundle;
 
 
-use Evrinoma\UidBundle\DependencyInjection\Compiler\Constraint\Property\UidPass;
-use Evrinoma\UidBundle\DependencyInjection\Compiler\DecoratorPass;
-use Evrinoma\UidBundle\DependencyInjection\Compiler\MapEntityPass;
-use Evrinoma\UidBundle\DependencyInjection\EvrinomaUidExtension;
+use Demoniqus\UidBundle\DependencyInjection\Compiler\Constraint\Property\UidPass;
+use Demoniqus\UidBundle\DependencyInjection\Compiler\DecoratorPass;
+use Demoniqus\UidBundle\DependencyInjection\Compiler\MapEntityPass;
+use Demoniqus\UidBundle\DependencyInjection\EvrinomaUidExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

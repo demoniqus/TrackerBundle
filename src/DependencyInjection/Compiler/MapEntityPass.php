@@ -1,10 +1,10 @@
 <?php
 
-namespace Evrinoma\UidBundle\DependencyInjection\Compiler;
+namespace Demoniqus\UidBundle\DependencyInjection\Compiler;
 
-use Evrinoma\UidBundle\DependencyInjection\EvrinomaUidExtension;
-use Evrinoma\UidBundle\EvrinomaUidBundle;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\DependencyInjection\EvrinomaUidExtension;
+use Demoniqus\UidBundle\EvrinomaUidBundle;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 use Evrinoma\UtilsBundle\DependencyInjection\Compiler\AbstractMapEntity;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

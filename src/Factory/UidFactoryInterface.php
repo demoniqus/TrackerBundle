@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Factory;
+namespace Demoniqus\UidBundle\Factory;
 
 
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 
 interface UidFactoryInterface
 {

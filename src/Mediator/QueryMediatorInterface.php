@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Mediator;
+namespace Demoniqus\UidBundle\Mediator;
 
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
 use Doctrine\ORM\QueryBuilder;
 
 

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Constraint\Property;
+namespace Demoniqus\UidBundle\Constraint\Property;
 
 
 use Evrinoma\UtilsBundle\Constraint\Property\ConstraintInterface;

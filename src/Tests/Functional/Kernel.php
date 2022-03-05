@@ -1,9 +1,9 @@
 <?php
 
-namespace Evrinoma\UidBundle\Tests\Functional;
+namespace Demoniqus\UidBundle\Tests\Functional;
 
+use Demoniqus\UidBundle\EvrinomaUidBundle;
 use Evrinoma\TestUtilsBundle\Kernel\AbstractApiKernel;
-use Evrinoma\UidBundle\EvrinomaUidBundle;
 
 /**
  * Kernel

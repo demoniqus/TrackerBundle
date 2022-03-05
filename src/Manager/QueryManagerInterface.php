@@ -1,11 +1,11 @@
 <?php
 
-namespace Evrinoma\UidBundle\Manager;
+namespace Demoniqus\UidBundle\Manager;
 
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidNotFoundException;
-use Evrinoma\UidBundle\Exception\UidProxyException;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidNotFoundException;
+use Demoniqus\UidBundle\Exception\UidProxyException;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 
 interface QueryManagerInterface
 {

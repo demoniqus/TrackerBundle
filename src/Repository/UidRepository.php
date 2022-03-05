@@ -1,19 +1,19 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Repository;
+namespace Demoniqus\UidBundle\Repository;
 
 
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
+use Demoniqus\UidBundle\Exception\UidNotFoundException;
+use Demoniqus\UidBundle\Exception\UidProxyException;
+use Demoniqus\UidBundle\Mediator\QueryMediatorInterface;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\ORMInvalidArgumentException;
 use Doctrine\Persistence\ManagerRegistry;
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidCannotBeSavedException;
-use Evrinoma\UidBundle\Exception\UidNotFoundException;
-use Evrinoma\UidBundle\Exception\UidProxyException;
-use Evrinoma\UidBundle\Mediator\QueryMediatorInterface;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
 
 class UidRepository extends ServiceEntityRepository implements UidRepositoryInterface
 {

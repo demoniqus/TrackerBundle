@@ -1,13 +1,13 @@
 <?php
 
-namespace Evrinoma\UidBundle\Fixtures;
+namespace Demoniqus\UidBundle\Fixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-use Evrinoma\UidBundle\Entity\Uid\BaseUid;
-use Evrinoma\UidBundle\Tests\Functional\ValueObject\Uid;
+use Demoniqus\UidBundle\Entity\Uid\BaseUid;
+use Demoniqus\UidBundle\Tests\Functional\ValueObject\Uid;
 
 class UidFixtures extends Fixture implements OrderedFixtureInterface, FixtureGroupInterface
 {

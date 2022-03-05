@@ -1,12 +1,12 @@
 <?php
 
-namespace Evrinoma\UidBundle\Manager;
+namespace Demoniqus\UidBundle\Manager;
 
-use Evrinoma\UidBundle\Exception\UidProxyException;
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidNotFoundException;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
-use Evrinoma\UidBundle\Repository\UidQueryRepositoryInterface;
+use Demoniqus\UidBundle\Exception\UidProxyException;
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidNotFoundException;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Repository\UidQueryRepositoryInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 

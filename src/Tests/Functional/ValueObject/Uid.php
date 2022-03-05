@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Tests\Functional\ValueObject;
+namespace Demoniqus\UidBundle\Tests\Functional\ValueObject;
 
 
 use Evrinoma\TestUtilsBundle\ValueObject\AbstractValueObject;

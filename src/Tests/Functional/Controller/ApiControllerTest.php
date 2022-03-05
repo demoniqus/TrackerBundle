@@ -1,10 +1,10 @@
 <?php
 
-namespace Evrinoma\UidBundle\Tests\Functional\Controller;
+namespace Demoniqus\UidBundle\Tests\Functional\Controller;
 
 
-use Evrinoma\UidBundle\EvrinomaUidBundle;
-use Evrinoma\UidBundle\Fixtures\FixtureInterface;
+use Demoniqus\UidBundle\EvrinomaUidBundle;
+use Demoniqus\UidBundle\Fixtures\FixtureInterface;
 use Evrinoma\TestUtilsBundle\Action\ActionTestInterface;
 use Evrinoma\TestUtilsBundle\Functional\AbstractFunctionalTest;
 use Psr\Container\ContainerInterface;

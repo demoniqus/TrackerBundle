@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\UidBundle\Fixtures;
+namespace Demoniqus\UidBundle\Fixtures;
 
 interface FixtureInterface
 {

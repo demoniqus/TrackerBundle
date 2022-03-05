@@ -1,10 +1,10 @@
 <?php
 
-namespace Evrinoma\UidBundle\DependencyInjection;
+namespace Demoniqus\UidBundle\DependencyInjection;
 
-use Evrinoma\UidBundle\DependencyInjection\Compiler\Constraint\Property\UidPass;
-use Evrinoma\UidBundle\Dto\UidApiDto;
-use Evrinoma\UidBundle\EvrinomaUidBundle;
+use Demoniqus\UidBundle\DependencyInjection\Compiler\Constraint\Property\UidPass;
+use Demoniqus\UidBundle\Dto\UidApiDto;
+use Demoniqus\UidBundle\EvrinomaUidBundle;
 use Evrinoma\UtilsBundle\DependencyInjection\HelperTrait;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;

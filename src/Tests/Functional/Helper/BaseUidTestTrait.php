@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\UidBundle\Tests\Functional\Helper;
+namespace Demoniqus\UidBundle\Tests\Functional\Helper;
 
 use PHPUnit\Framework\Assert;
 

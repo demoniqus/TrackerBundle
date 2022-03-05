@@ -1,12 +1,12 @@
 <?php
 
-namespace Evrinoma\UidBundle\Manager;
+namespace Demoniqus\UidBundle\Manager;
 
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidCannotBeRemovedException;
-use Evrinoma\UidBundle\Exception\UidInvalidException;
-use Evrinoma\UidBundle\Exception\UidNotFoundException;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeRemovedException;
+use Demoniqus\UidBundle\Exception\UidInvalidException;
+use Demoniqus\UidBundle\Exception\UidNotFoundException;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 
 interface CommandManagerInterface
 {

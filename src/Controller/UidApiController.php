@@ -1,15 +1,15 @@
 <?php
 
-namespace Evrinoma\UidBundle\Controller;
+namespace Demoniqus\UidBundle\Controller;
 
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
+use Demoniqus\UidBundle\Exception\UidInvalidException;
+use Demoniqus\UidBundle\Exception\UidNotFoundException;
+use Demoniqus\UidBundle\Manager\CommandManagerInterface;
+use Demoniqus\UidBundle\Manager\QueryManagerInterface;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Evrinoma\DtoBundle\Factory\FactoryDtoInterface;
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidCannotBeSavedException;
-use Evrinoma\UidBundle\Exception\UidInvalidException;
-use Evrinoma\UidBundle\Exception\UidNotFoundException;
-use Evrinoma\UidBundle\Manager\CommandManagerInterface;
-use Evrinoma\UidBundle\Manager\QueryManagerInterface;
 use Evrinoma\UtilsBundle\Controller\AbstractApiController;
 use Evrinoma\UtilsBundle\Controller\ApiControllerInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;

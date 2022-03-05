@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Dto\Preserve;
+namespace Demoniqus\UidBundle\Dto\Preserve;
 
 
 trait UidApiDtoTrait

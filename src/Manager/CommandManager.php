@@ -1,17 +1,17 @@
 <?php
 
-namespace Evrinoma\UidBundle\Manager;
+namespace Demoniqus\UidBundle\Manager;
 
-use Evrinoma\UidBundle\Exception\UidCannotBeCreatedException;
-use Evrinoma\UidBundle\Exception\UidCannotBeRemovedException;
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidCannotBeSavedException;
-use Evrinoma\UidBundle\Exception\UidInvalidException;
-use Evrinoma\UidBundle\Exception\UidNotFoundException;
-use Evrinoma\UidBundle\Factory\UidFactoryInterface;
-use Evrinoma\UidBundle\Mediator\CommandMediatorInterface;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
-use Evrinoma\UidBundle\Repository\UidCommandRepositoryInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeCreatedException;
+use Demoniqus\UidBundle\Exception\UidCannotBeRemovedException;
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
+use Demoniqus\UidBundle\Exception\UidInvalidException;
+use Demoniqus\UidBundle\Exception\UidNotFoundException;
+use Demoniqus\UidBundle\Factory\UidFactoryInterface;
+use Demoniqus\UidBundle\Mediator\CommandMediatorInterface;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Repository\UidCommandRepositoryInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 use Evrinoma\UtilsBundle\Validator\ValidatorInterface;

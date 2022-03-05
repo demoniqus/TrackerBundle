@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Mediator;
+namespace Demoniqus\UidBundle\Mediator;
 
 
-use Evrinoma\UidBundle\Exception\UidCannotBeSavedException;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\UtilsBundle\Mediator\AbstractCommandMediator;
 

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Entity\Uid;
+namespace Demoniqus\UidBundle\Entity\Uid;
 
 
-use Evrinoma\UidBundle\Model\Uid\AbstractUid;
+use Demoniqus\UidBundle\Model\Uid\AbstractUid;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

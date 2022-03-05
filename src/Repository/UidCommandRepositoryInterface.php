@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Repository;
+namespace Demoniqus\UidBundle\Repository;
 
 
-use Evrinoma\UidBundle\Exception\UidCannotBeRemovedException;
-use Evrinoma\UidBundle\Exception\UidCannotBeSavedException;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeRemovedException;
+use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 
 interface UidCommandRepositoryInterface
 {

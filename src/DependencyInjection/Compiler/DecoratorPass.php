@@ -1,8 +1,8 @@
 <?php
 
-namespace Evrinoma\UidBundle\DependencyInjection\Compiler;
+namespace Demoniqus\UidBundle\DependencyInjection\Compiler;
 
-use Evrinoma\UidBundle\EvrinomaUidBundle;
+use Demoniqus\UidBundle\EvrinomaUidBundle;
 use Symfony\Component\DependencyInjection\Compiler\AbstractRecursivePass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Mediator;
+namespace Demoniqus\UidBundle\Mediator;
 
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidCannotBeCreatedException;
-use Evrinoma\UidBundle\Exception\UidCannotBeRemovedException;
-use Evrinoma\UidBundle\Exception\UidCannotBeSavedException;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidCannotBeCreatedException;
+use Demoniqus\UidBundle\Exception\UidCannotBeRemovedException;
+use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 
 
 interface CommandMediatorInterface

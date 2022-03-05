@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Exception;
+namespace Demoniqus\UidBundle\Exception;
 
 
 final class UidCannotBeCreatedException extends \Exception

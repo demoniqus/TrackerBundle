@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Model\Uid;
+namespace Demoniqus\UidBundle\Model\Uid;
 
 use Doctrine\ORM\Mapping as ORM;
 use Evrinoma\UtilsBundle\Entity\ActiveTrait;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\UidBundle\Model;
+namespace Demoniqus\UidBundle\Model;
 
 
 interface ModelInterface

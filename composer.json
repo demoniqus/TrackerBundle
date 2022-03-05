@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Evrinoma\\UidBundle\\": "src/"
+      "Demoniqus\\UidBundle\\": "src/"
     },
     "exclude-from-classmap": [
       "/Tests/",

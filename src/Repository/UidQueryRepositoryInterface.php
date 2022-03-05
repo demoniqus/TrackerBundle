@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Repository;
+namespace Demoniqus\UidBundle\Repository;
 
 
+use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\UidBundle\Exception\UidNotFoundException;
+use Demoniqus\UidBundle\Exception\UidProxyException;
+use Demoniqus\UidBundle\Model\Uid\UidInterface;
 use Doctrine\ORM\Exception\ORMException;
-use Evrinoma\UidBundle\Dto\UidApiDtoInterface;
-use Evrinoma\UidBundle\Exception\UidNotFoundException;
-use Evrinoma\UidBundle\Exception\UidProxyException;
-use Evrinoma\UidBundle\Model\Uid\UidInterface;
 
 interface UidQueryRepositoryInterface
 {

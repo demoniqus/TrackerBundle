@@ -1,9 +1,9 @@
 <?php
 
-namespace Evrinoma\UidBundle\DependencyInjection\Compiler\Constraint\Property;
+namespace Demoniqus\UidBundle\DependencyInjection\Compiler\Constraint\Property;
 
-use Evrinoma\UidBundle\EvrinomaUidBundle;
-use Evrinoma\UidBundle\Validator\UidValidator;
+use Demoniqus\UidBundle\EvrinomaUidBundle;
+use Demoniqus\UidBundle\Validator\UidValidator;
 use Evrinoma\UtilsBundle\DependencyInjection\Compiler\AbstractConstraint;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 

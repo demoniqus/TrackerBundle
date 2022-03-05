@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Repository;
+namespace Demoniqus\UidBundle\Repository;
 
 
 interface AliasInterface

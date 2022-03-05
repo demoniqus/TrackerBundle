@@ -1,9 +1,9 @@
 <?php
 
-namespace Evrinoma\UidBundle\Validator;
+namespace Demoniqus\UidBundle\Validator;
 
 
-use Evrinoma\UidBundle\Entity\Uid\BaseUid;
+use Demoniqus\UidBundle\Entity\Uid\BaseUid;
 use Evrinoma\UtilsBundle\Validator\AbstractValidator;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

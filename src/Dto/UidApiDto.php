@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Dto;
+namespace Demoniqus\UidBundle\Dto;
 
 
+use Demoniqus\UidBundle\Model\ModelInterface;
 use Evrinoma\DtoBundle\Dto\AbstractDto;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\DtoCommon\ValueObject\Immutable\ActiveTrait;
 use Evrinoma\DtoCommon\ValueObject\Immutable\IdTrait;
-use Evrinoma\UidBundle\Model\ModelInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class UidApiDto extends AbstractDto implements UidApiDtoInterface

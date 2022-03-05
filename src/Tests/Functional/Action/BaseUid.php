@@ -1,14 +1,14 @@
 <?php
 
-namespace Evrinoma\UidBundle\Tests\Functional\Action;
+namespace Demoniqus\UidBundle\Tests\Functional\Action;
 
 
+use Demoniqus\UidBundle\Dto\UidApiDto;
+use Demoniqus\UidBundle\Tests\Functional\Helper\BaseUidTestTrait;
+use Demoniqus\UidBundle\EvrinomaUidBundle;
+use Demoniqus\UidBundle\Tests\Functional\ValueObject\Uid;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
-use Evrinoma\UidBundle\Dto\UidApiDto;
-use Evrinoma\UidBundle\Tests\Functional\Helper\BaseUidTestTrait;
-use Evrinoma\UidBundle\EvrinomaUidBundle;
 use Evrinoma\TestUtilsBundle\Action\AbstractServiceTest;
-use Evrinoma\UidBundle\Tests\Functional\ValueObject\Uid;
 use Evrinoma\UtilsBundle\Model\ActiveModel;
 use PHPUnit\Framework\Assert;
 

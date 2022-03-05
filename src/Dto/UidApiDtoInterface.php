@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Dto;
+namespace Demoniqus\UidBundle\Dto;
 
 
 use Evrinoma\DtoBundle\Dto\DtoInterface;

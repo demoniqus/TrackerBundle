@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\UidBundle\Model\Uid;
+namespace Demoniqus\UidBundle\Model\Uid;
 
 
 use Evrinoma\UtilsBundle\Entity\ActiveInterface;
