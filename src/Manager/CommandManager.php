@@ -84,11 +84,7 @@ final class CommandManager implements CommandManagerInterface, RestInterface
      */
     public function put(UidApiDtoInterface $dto): UidInterface
     {
-        try {
-            $sid = $this->repository->find($dto->getId());
-        } catch (UidNotFoundException $e) {
-            throw $e;
-        }
+        $sid = $this->repository->find($dto->getId());
 
         $sid
             ->setUid($dto->getUid())
@@ -120,17 +116,11 @@ final class CommandManager implements CommandManagerInterface, RestInterface
      */
     public function delete(UidApiDtoInterface $dto): void
     {
-        try {
-            $sid = $this->repository->find($dto->getId());
-        } catch (UidNotFoundException $e) {
-            throw $e;
-        }
+        $sid = $this->repository->find($dto->getId());
+
         $this->mediator->onDelete($dto, $sid);
-        try {
-            $this->repository->remove($sid);
-        } catch (UidCannotBeRemovedException $e) {
-            throw $e;
-        }
+
+        $this->repository->remove($sid);
     }
 //endregion Public
 

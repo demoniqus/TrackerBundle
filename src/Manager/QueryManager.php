@@ -34,13 +34,7 @@ final class QueryManager implements QueryManagerInterface, RestInterface
      */
     public function criteria(UidApiDtoInterface $dto): array
     {
-        try {
-            $uid = $this->repository->findByCriteria($dto);
-        } catch (UidNotFoundException $e) {
-            throw $e;
-        }
-
-        return $uid;
+        return $this->repository->findByCriteria($dto);
     }
 
     /**
@@ -51,15 +45,11 @@ final class QueryManager implements QueryManagerInterface, RestInterface
      */
     public function proxy(UidApiDtoInterface $dto): UidInterface
     {
-        try {
-            if ($dto->hasId()) {
-                $uid = $this->repository->proxy($dto->getId());
-            }
-            else {
-                throw new UidProxyException("Id value is not set while trying get proxy object");
-            }
-        } catch (UidProxyException $e) {
-            throw $e;
+        if ($dto->hasId()) {
+            $uid = $this->repository->proxy($dto->getId());
+        }
+        else {
+            throw new UidProxyException("Id value is not set while trying get proxy object");
         }
 
         return $uid;
@@ -80,13 +70,7 @@ final class QueryManager implements QueryManagerInterface, RestInterface
      */
     public function get(UidApiDtoInterface $dto): UidInterface
     {
-        try {
-            $uid = $this->repository->find($dto->getId());
-        } catch (UidNotFoundException $e) {
-            throw $e;
-        }
-
-        return $uid;
+        return $this->repository->find($dto->getId());
     }
 //endregion Getters/Setters
 }
