@@ -1,0 +1,18 @@
+Evrinoma\UidBundle\Model\Uid\AbstractUid:
+  exclusion_policy: ALL
+  properties:
+    id:
+      groups: [ api_get_uid, api_post_uid, api_put_uid ]
+      expose: true
+    createdAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ api_get_uid, api_post_uid, api_put_uid  ]
+    updatedAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ api_get_uid, api_post_uid, api_put_uid ]
+    active:
+      groups: [ api_get_uid, api_post_uid, api_put_uid ]
+      expose: true
+    uid:
+      groups: [ api_get_uid, api_post_uid, api_put_uid ]
+      expose: true

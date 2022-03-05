@@ -1,0 +1,5 @@
+services:
+  evrinoma.uid.constraint.property.uid:
+    class: Evrinoma\UidBundle\Constraint\Property\Uid
+  evrinoma.uid.constraint.property.active:
+    class: Evrinoma\UidBundle\Constraint\Property\Active

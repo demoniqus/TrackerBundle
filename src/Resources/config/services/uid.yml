@@ -1,0 +1,67 @@
+services:
+  Evrinoma\UidBundle\Controller\UidApiController:
+    alias: evrinoma.uid.api.controller
+    public: true
+
+  evrinoma.uid.api.controller:
+    class: Evrinoma\UidBundle\Controller\UidApiController
+    arguments:
+      - '@jms_serializer'
+      - '@request_stack'
+      - '@evrinoma.dto.factory'
+      - '@evrinoma.uid.command.manager'
+      - '@evrinoma.uid.query.manager'
+    autowire: true
+
+  evrinoma.uid.factory:
+    class: Evrinoma\UidBundle\Factory\UidFactory
+    public: true
+    arguments:
+
+  evrinoma.uid.repository:
+    class: Evrinoma\UidBundle\Repository\UidRepository
+    public: true
+    arguments:
+
+  evrinoma.uid.command.manager:
+    class: Evrinoma\UidBundle\Manager\CommandManager
+    arguments:
+      - '@evrinoma.uid.validator'
+      - '@evrinoma.uid.repository'
+      - '@evrinoma.uid.factory'
+      - '@evrinoma.uid.command.mediator'
+
+  evrinoma.uid.query.manager:
+    class: Evrinoma\UidBundle\Manager\QueryManager
+    arguments:
+      - '@evrinoma.uid.repository'
+
+  evrinoma.uid.validator:
+    class: Evrinoma\UidBundle\Validator\UidValidator
+    public: true
+    arguments:
+
+  Evrinoma\UidBundle\Validator\UidValidator:
+    alias: evrinoma.uid.validator
+
+  evrinoma.uid.query.mediator:
+    class: Evrinoma\UidBundle\Mediator\QueryMediator
+    public: true
+    arguments:
+
+  Evrinoma\UidBundle\Mediator\QueryMediator:
+    alias: evrinoma.uid.query.mediator
+
+  Evrinoma\UidBundle\Mediator\QueryMediatorInterface:
+    alias: evrinoma.uid.query.mediator
+
+  evrinoma.uid.command.mediator:
+    class: Evrinoma\UidBundle\Mediator\CommandMediator
+    public: true
+    arguments:
+
+  Evrinoma\UidBundle\Mediator\CommandMediator:
+    alias: evrinoma.uid.command.mediator
+
+  Evrinoma\UidBundle\Mediator\CommandMediatorInterface:
+    alias: evrinoma.uid.command.mediator

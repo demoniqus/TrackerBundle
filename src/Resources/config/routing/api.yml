@@ -1,0 +1,3 @@
+uid_api:
+  resource: "@EvrinomaUidBundle/Controller/UidApiController.php"
+  type: annotation

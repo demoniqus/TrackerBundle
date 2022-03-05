@@ -1,0 +1,5 @@
+services:
+  evrinoma.uid.fixtures.uid:
+    class: Evrinoma\UidBundle\Fixtures\UidFixtures
+    tags:
+      - { name: doctrine.fixture.orm }

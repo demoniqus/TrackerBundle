@@ -1,0 +1,3 @@
+projectapi:
+  resource: "@EvrinomaUidBundle/Resources/config/routing/api.yml"
+  prefix: evrinoma
