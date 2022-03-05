@@ -1,6 +1,10 @@
 ###> phpstorm
 .idea/
 /vendor/
+/public/
+/tmp/
+/var/
+/vhost.conf
 
 
 ###< symfony/phpunit-bridge ###
