@@ -1,10 +1,10 @@
 <?php
 
-namespace Demoniqus\UidBundle\Tests\Functional\Controller;
+namespace Demoniqus\TrackerBundle\Tests\Functional\Controller;
 
 
-use Demoniqus\UidBundle\EvrinomaUidBundle;
-use Demoniqus\UidBundle\Fixtures\FixtureInterface;
+use Demoniqus\TrackerBundle\DemoniqusTrackerBundle;
+use Demoniqus\TrackerBundle\Fixtures\FixtureInterface;
 use Evrinoma\TestUtilsBundle\Action\ActionTestInterface;
 use Evrinoma\TestUtilsBundle\Functional\AbstractFunctionalTest;
 use Psr\Container\ContainerInterface;
@@ -15,10 +15,16 @@ use Psr\Container\ContainerInterface;
 final class ApiControllerTest extends AbstractFunctionalTest
 {
 //region SECTION: Fields
-    protected string $actionServiceName = 'evrinoma.' . EvrinomaUidBundle::UID_LC . '.test.functional.action.' . EvrinomaUidBundle::UID_LC;
+    protected string $actionServiceName = DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '.' . DemoniqusTrackerBundle::TRACKER_LC . '.test.functional.action.' . DemoniqusTrackerBundle::TRACKER_LC;
 //endregion Fields
 
 //region SECTION: Protected
+    /**
+     * @param ContainerInterface $container
+     * @return ActionTestInterface
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     */
     protected function getActionService(ContainerInterface $container): ActionTestInterface
     {
         return $container->get($this->actionServiceName);
@@ -43,7 +49,7 @@ final class ApiControllerTest extends AbstractFunctionalTest
 //region SECTION: Getters/Setters
     public static function getFixtures(): array
     {
-        return [FixtureInterface::UID_FIXTURES];
+        return [FixtureInterface::TRACKER_FIXTURES];
     }
 //endregion Getters/Setters
 }

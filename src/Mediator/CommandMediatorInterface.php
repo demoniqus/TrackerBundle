@@ -1,42 +1,42 @@
 <?php
 
 
-namespace Demoniqus\UidBundle\Mediator;
+namespace Demoniqus\TrackerBundle\Mediator;
 
-use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
-use Demoniqus\UidBundle\Exception\UidCannotBeCreatedException;
-use Demoniqus\UidBundle\Exception\UidCannotBeRemovedException;
-use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
-use Demoniqus\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\TrackerBundle\Dto\TrackerApiDtoInterface;
+use Demoniqus\TrackerBundle\Exception\TrackerCannotBeCreatedException;
+use Demoniqus\TrackerBundle\Exception\TrackerCannotBeRemovedException;
+use Demoniqus\TrackerBundle\Exception\TrackerCannotBeSavedException;
+use Demoniqus\TrackerBundle\Model\Tracker\TrackerInterface;
 
 
 interface CommandMediatorInterface
 {
 //region SECTION:Public
     /**
-     * @param UidApiDtoInterface $dto
-     * @param UidInterface       $entity
+     * @param TrackerApiDtoInterface $dto
+     * @param TrackerInterface       $entity
      *
-     * @return UidInterface
-     * @throws UidCannotBeSavedException
+     * @return TrackerInterface
+     * @throws TrackerCannotBeSavedException
      */
-    public function onUpdate(UidApiDtoInterface $dto, UidInterface $entity): UidInterface;
+    public function onUpdate(TrackerApiDtoInterface $dto, TrackerInterface $entity): TrackerInterface;
 
     /**
-     * @param UidApiDtoInterface $dto
-     * @param UidInterface       $entity
+     * @param TrackerApiDtoInterface $dto
+     * @param TrackerInterface       $entity
      *
-     * @throws UidCannotBeRemovedException
+     * @throws TrackerCannotBeRemovedException
      */
-    public function onDelete(UidApiDtoInterface $dto, UidInterface $entity): void;
+    public function onDelete(TrackerApiDtoInterface $dto, TrackerInterface $entity): void;
 
     /**
-     * @param UidApiDtoInterface $dto
-     * @param UidInterface       $entity
+     * @param TrackerApiDtoInterface $dto
+     * @param TrackerInterface       $entity
      *
-     * @return UidInterface
-     * @throws UidCannotBeCreatedException
+     * @return TrackerInterface
+     * @throws TrackerCannotBeCreatedException
      */
-    public function onCreate(UidApiDtoInterface $dto, UidInterface $entity): UidInterface;
+    public function onCreate(TrackerApiDtoInterface $dto, TrackerInterface $entity): TrackerInterface;
 //endregion Public
 }

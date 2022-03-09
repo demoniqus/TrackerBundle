@@ -1,8 +1,8 @@
 <?php
 
-namespace Demoniqus\UidBundle\DependencyInjection\Compiler;
+namespace Demoniqus\TrackerBundle\DependencyInjection\Compiler;
 
-use Demoniqus\UidBundle\EvrinomaUidBundle;
+use Demoniqus\TrackerBundle\DemoniqusTrackerBundle;
 use Symfony\Component\DependencyInjection\Compiler\AbstractRecursivePass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -14,16 +14,16 @@ class DecoratorPass extends AbstractRecursivePass
      */
     public function process(ContainerBuilder $container)
     {
-        $decoratorQuery = $container->getParameter(EvrinomaUidBundle::VENDOR_PREFIX_LC . '.' . EvrinomaUidBundle::UID_LC . '.decorates.query');
+        $decoratorQuery = $container->getParameter(DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '.' . DemoniqusTrackerBundle::TRACKER_LC . '.decorates.query');
         if ($decoratorQuery) {
             $queryMediator = $container->getDefinition($decoratorQuery);
-            $repository = $container->getDefinition(EvrinomaUidBundle::VENDOR_PREFIX_LC . '.' . EvrinomaUidBundle::UID_LC . '.repository');
+            $repository = $container->getDefinition(DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '.' . DemoniqusTrackerBundle::TRACKER_LC . '.repository');
             $repository->setArgument(2, $queryMediator);
         }
-        $decoratorCommand = $container->getParameter(EvrinomaUidBundle::VENDOR_PREFIX_LC . '.' . EvrinomaUidBundle::UID_LC . '.decorates.command');
+        $decoratorCommand = $container->getParameter(DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '.' . DemoniqusTrackerBundle::TRACKER_LC . '.decorates.command');
         if ($decoratorCommand) {
             $commandMediator = $container->getDefinition($decoratorCommand);
-            $commandManager = $container->getDefinition(EvrinomaUidBundle::VENDOR_PREFIX_LC . '.' . EvrinomaUidBundle::UID_LC . '.command.manager');
+            $commandManager = $container->getDefinition(DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '.' . DemoniqusTrackerBundle::TRACKER_LC . '.command.manager');
             $commandManager->setArgument(3, $commandMediator);
         }
     }

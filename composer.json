@@ -1,8 +1,8 @@
 {
-  "name": "demoniqus/uid-bundle",
-  "description": "Uid",
+  "name": "demoniqus/tracker-bundle",
+  "description": "Tracker",
   "keywords": [
-    "UID"
+    "Tracker"
   ],
   "type": "symfony-bundle",
   "license": "MIT",
@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Demoniqus\\UidBundle\\": "src/"
+      "Demoniqus\\TrackerBundle\\": "src/"
     },
     "exclude-from-classmap": [
       "/Tests/",

@@ -1,9 +1,0 @@
-services:
-  evrinoma.uid.test.functional.action.uid:
-    class: Evrinoma\UidBundle\Tests\Functional\Action\BaseUid
-    public: true
-    arguments:
-
-  Evrinoma\UidBundle\Tests\Functional\Action\BaseUid:
-    alias: evrinoma.uid.test.functional.action.uid
-    public: true

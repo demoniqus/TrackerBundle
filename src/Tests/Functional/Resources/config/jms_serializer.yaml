@@ -1,6 +1,6 @@
 jms_serializer:
   metadata:
     directories:
-      UidBundle:
-        namespace_prefix: "Evrinoma\\UidBundle"
-        path: '%kernel.root_dir%/Resources/config/serializer/UidBundle'
+      TrackerBundle:
+        namespace_prefix: "Demoniqus\\TrackerBundle"
+        path: '%kernel.root_dir%/Resources/config/serializer/TrackerBundle'

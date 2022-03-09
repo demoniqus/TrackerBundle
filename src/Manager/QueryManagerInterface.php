@@ -1,37 +1,37 @@
 <?php
 
-namespace Demoniqus\UidBundle\Manager;
+namespace Demoniqus\TrackerBundle\Manager;
 
-use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
-use Demoniqus\UidBundle\Exception\UidNotFoundException;
-use Demoniqus\UidBundle\Exception\UidProxyException;
-use Demoniqus\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\TrackerBundle\Dto\TrackerApiDtoInterface;
+use Demoniqus\TrackerBundle\Exception\TrackerNotFoundException;
+use Demoniqus\TrackerBundle\Exception\TrackerProxyException;
+use Demoniqus\TrackerBundle\Model\Tracker\TrackerInterface;
 
 interface QueryManagerInterface
 {
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
      * @return array
-     * @throws UidNotFoundException
+     * @throws TrackerNotFoundException
      */
-    public function criteria(UidApiDtoInterface $dto): array;
+    public function criteria(TrackerApiDtoInterface $dto): array;
 //endregion Public
 
 //region SECTION: Getters/Setters
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidNotFoundException
+     * @return TrackerInterface
+     * @throws TrackerNotFoundException
      */
-    public function get(UidApiDtoInterface $dto): UidInterface;
+    public function get(TrackerApiDtoInterface $dto): TrackerInterface;
 
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidProxyException
+     * @return TrackerInterface
+     * @throws TrackerProxyException
      */
-    public function proxy(UidApiDtoInterface $dto): UidInterface;
+    public function proxy(TrackerApiDtoInterface $dto): TrackerInterface;
 }

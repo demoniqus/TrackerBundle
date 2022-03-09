@@ -1,2 +1,2 @@
 imports:
-  - { resource: constraint/property/uid.yml }
+  - { resource: constraint/property/tracker.yml }

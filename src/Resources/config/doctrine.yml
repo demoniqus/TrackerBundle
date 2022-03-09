@@ -1,5 +1,5 @@
 services:
-  evrinoma.uid.object_manager:
+  demoniqus.tracker.object_manager:
     class:  Doctrine\Persistence\ObjectManager
     public: false
-    arguments: ['%evrinoma.uid.model_manager_name%']
+    arguments: ['%demoniqus.tracker.model_manager_name%']

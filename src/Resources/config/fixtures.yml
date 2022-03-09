@@ -1,5 +1,5 @@
 services:
-  evrinoma.uid.fixtures.uid:
-    class: Evrinoma\UidBundle\Fixtures\UidFixtures
+  demoniqus.tracker.fixtures.tracker:
+    class: Demoniqus\TrackerBundle\Fixtures\TrackerFixtures
     tags:
       - { name: doctrine.fixture.orm }

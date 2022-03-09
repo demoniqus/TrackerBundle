@@ -1,9 +1,9 @@
 <?php
 
-namespace Demoniqus\UidBundle\DependencyInjection;
+namespace Demoniqus\TrackerBundle\DependencyInjection;
 
 
-use Demoniqus\UidBundle\EvrinomaUidBundle;
+use Demoniqus\TrackerBundle\DemoniqusTrackerBundle;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -15,7 +15,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder      = new TreeBuilder(EvrinomaUidBundle::UID_LC);
+        $treeBuilder      = new TreeBuilder(DemoniqusTrackerBundle::TRACKER_LC);
         $rootNode         = $treeBuilder->getRootNode();
         $supportedDrivers = ['orm'];
 
@@ -30,13 +30,13 @@ class Configuration implements ConfigurationInterface
             ->cannotBeOverwritten()
             ->defaultValue('orm')
             ->end()
-            ->scalarNode('factory')->cannotBeEmpty()->defaultValue(EvrinomaUidExtension::ENTITY_FACTORY)->end()
-            ->scalarNode('entity')->cannotBeEmpty()->defaultValue(EvrinomaUidExtension::ENTITY_BASE)->end()
-            ->scalarNode('constraints')->defaultTrue()->info('This option is used for enable/disable basic uid constraints')->end()
-            ->scalarNode('dto')->cannotBeEmpty()->defaultValue(EvrinomaUidExtension::DTO_BASE)->info('This option is used for dto class override')->end()
+            ->scalarNode('factory')->cannotBeEmpty()->defaultValue(DemoniqusTrackerExtension::ENTITY_FACTORY)->end()
+            ->scalarNode('entity')->cannotBeEmpty()->defaultValue(DemoniqusTrackerExtension::ENTITY_BASE)->end()
+            ->scalarNode('constraints')->defaultTrue()->info('This option is used for enable/disable basic tracker constraints')->end()
+            ->scalarNode('dto')->cannotBeEmpty()->defaultValue(DemoniqusTrackerExtension::DTO_BASE)->info('This option is used for dto class override')->end()
             ->arrayNode('decorates')->addDefaultsIfNotSet()->children()
-            ->scalarNode('command')->defaultNull()->info('This option is used for command uid decoration')->end()
-            ->scalarNode('query')->defaultNull()->info('This option is used for query uid decoration')->end()
+            ->scalarNode('command')->defaultNull()->info('This option is used for command tracker decoration')->end()
+            ->scalarNode('query')->defaultNull()->info('This option is used for query tracker decoration')->end()
             ->end()->end()->end();
 
         return $treeBuilder;

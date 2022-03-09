@@ -1,0 +1,18 @@
+Demoniqus\TrackerBundle\Model\Tracker\AbstractTrack:
+  exclusion_policy: ALL
+  properties:
+    id:
+      groups: [ api_get_tracker, api_post_tracker, api_put_tracker ]
+      expose: true
+    createdAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ api_get_tracker, api_post_tracker, api_put_tracker ]
+    updatedAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ api_get_tracker, api_post_tracker, api_put_tracker ]
+    active:
+      groups: [ api_get_tracker, api_post_tracker, api_put_tracker ]
+      expose: true
+    track:
+      groups: [ api_get_tracker, api_post_tracker, api_put_tracker ]
+      expose: true

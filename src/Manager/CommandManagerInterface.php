@@ -1,37 +1,37 @@
 <?php
 
-namespace Demoniqus\UidBundle\Manager;
+namespace Demoniqus\TrackerBundle\Manager;
 
-use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
-use Demoniqus\UidBundle\Exception\UidCannotBeRemovedException;
-use Demoniqus\UidBundle\Exception\UidInvalidException;
-use Demoniqus\UidBundle\Exception\UidNotFoundException;
-use Demoniqus\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\TrackerBundle\Dto\TrackerApiDtoInterface;
+use Demoniqus\TrackerBundle\Exception\TrackerCannotBeRemovedException;
+use Demoniqus\TrackerBundle\Exception\TrackerInvalidException;
+use Demoniqus\TrackerBundle\Exception\TrackerNotFoundException;
+use Demoniqus\TrackerBundle\Model\Tracker\TrackerInterface;
 
 interface CommandManagerInterface
 {
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidInvalidException
+     * @return TrackerInterface
+     * @throws TrackerInvalidException
      */
-    public function post(UidApiDtoInterface $dto): UidInterface;
+    public function post(TrackerApiDtoInterface $dto): TrackerInterface;
 
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidInvalidException
-     * @throws UidNotFoundException
+     * @return TrackerInterface
+     * @throws TrackerInvalidException
+     * @throws TrackerNotFoundException
      */
-    public function put(UidApiDtoInterface $dto): UidInterface;
+    public function put(TrackerApiDtoInterface $dto): TrackerInterface;
 
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @throws UidCannotBeRemovedException
-     * @throws UidNotFoundException
+     * @throws TrackerCannotBeRemovedException
+     * @throws TrackerNotFoundException
      */
-    public function delete(UidApiDtoInterface $dto): void;
+    public function delete(TrackerApiDtoInterface $dto): void;
 }

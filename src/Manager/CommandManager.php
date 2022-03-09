@@ -1,17 +1,17 @@
 <?php
 
-namespace Demoniqus\UidBundle\Manager;
+namespace Demoniqus\TrackerBundle\Manager;
 
-use Demoniqus\UidBundle\Exception\UidCannotBeCreatedException;
-use Demoniqus\UidBundle\Exception\UidCannotBeRemovedException;
-use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
-use Demoniqus\UidBundle\Exception\UidCannotBeSavedException;
-use Demoniqus\UidBundle\Exception\UidInvalidException;
-use Demoniqus\UidBundle\Exception\UidNotFoundException;
-use Demoniqus\UidBundle\Factory\UidFactoryInterface;
-use Demoniqus\UidBundle\Mediator\CommandMediatorInterface;
-use Demoniqus\UidBundle\Model\Uid\UidInterface;
-use Demoniqus\UidBundle\Repository\UidCommandRepositoryInterface;
+use Demoniqus\TrackerBundle\Exception\TrackerCannotBeCreatedException;
+use Demoniqus\TrackerBundle\Exception\TrackerCannotBeRemovedException;
+use Demoniqus\TrackerBundle\Dto\TrackerApiDtoInterface;
+use Demoniqus\TrackerBundle\Exception\TrackerCannotBeSavedException;
+use Demoniqus\TrackerBundle\Exception\TrackerInvalidException;
+use Demoniqus\TrackerBundle\Exception\TrackerNotFoundException;
+use Demoniqus\TrackerBundle\Factory\TrackerFactoryInterface;
+use Demoniqus\TrackerBundle\Mediator\CommandMediatorInterface;
+use Demoniqus\TrackerBundle\Model\Tracker\TrackerInterface;
+use Demoniqus\TrackerBundle\Repository\TrackerCommandRepositoryInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 use Evrinoma\UtilsBundle\Validator\ValidatorInterface;
@@ -21,24 +21,24 @@ final class CommandManager implements CommandManagerInterface, RestInterface
     use RestTrait;
 
 //region SECTION: Fields
-    private UidCommandRepositoryInterface $repository;
-    private ValidatorInterface                 $validator;
-    private UidFactoryInterface           $factory;
-    private CommandMediatorInterface           $mediator;
+    private TrackerCommandRepositoryInterface $repository;
+    private ValidatorInterface                $validator;
+    private TrackerFactoryInterface           $factory;
+    private CommandMediatorInterface          $mediator;
 //endregion Fields
 
 //region SECTION: Constructor
     /**
-     * @param ValidatorInterface                 $validator
-     * @param UidCommandRepositoryInterface $repository
-     * @param UidFactoryInterface           $factory
-     * @param CommandMediatorInterface           $mediator
+     * @param ValidatorInterface                $validator
+     * @param TrackerCommandRepositoryInterface $repository
+     * @param TrackerFactoryInterface           $factory
+     * @param CommandMediatorInterface          $mediator
      */
     public function __construct(
-        ValidatorInterface                 $validator,
-        UidCommandRepositoryInterface $repository,
-        UidFactoryInterface           $factory,
-        CommandMediatorInterface           $mediator
+        ValidatorInterface                $validator,
+        TrackerCommandRepositoryInterface $repository,
+        TrackerFactoryInterface           $factory,
+        CommandMediatorInterface          $mediator
     ) {
         $this->validator = $validator;
         $this->repository = $repository;
@@ -49,13 +49,13 @@ final class CommandManager implements CommandManagerInterface, RestInterface
 
 //region SECTION: Public
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidInvalidException|UidCannotBeCreatedException
-     * @throws UidCannotBeSavedException
+     * @return TrackerInterface
+     * @throws TrackerInvalidException|TrackerCannotBeCreatedException
+     * @throws TrackerCannotBeSavedException
      */
-    public function post(UidApiDtoInterface $dto): UidInterface
+    public function post(TrackerApiDtoInterface $dto): TrackerInterface
     {
         $sid = $this->factory->create($dto);
 
@@ -67,7 +67,7 @@ final class CommandManager implements CommandManagerInterface, RestInterface
 
             $errorsString = (string)$errors;
 
-            throw new UidInvalidException($errorsString);
+            throw new TrackerInvalidException($errorsString);
         }
 
         $this->repository->save($sid);
@@ -76,18 +76,18 @@ final class CommandManager implements CommandManagerInterface, RestInterface
     }
 
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidInvalidException
-     * @throws UidNotFoundException|UidCannotBeSavedException
+     * @return TrackerInterface
+     * @throws TrackerInvalidException
+     * @throws TrackerNotFoundException|TrackerCannotBeSavedException
      */
-    public function put(UidApiDtoInterface $dto): UidInterface
+    public function put(TrackerApiDtoInterface $dto): TrackerInterface
     {
         $sid = $this->repository->find($dto->getId());
 
         $sid
-            ->setUid($dto->getUid())
+            ->setTrack($dto->getTrack())
             ->setUpdatedAt(new \DateTimeImmutable())
             ->setActive($dto->getActive());
 
@@ -100,7 +100,7 @@ final class CommandManager implements CommandManagerInterface, RestInterface
 
             $errorsString = (string)$errors;
 
-            throw new UidInvalidException($errorsString);
+            throw new TrackerInvalidException($errorsString);
         }
 
         $this->repository->save($sid);
@@ -109,12 +109,12 @@ final class CommandManager implements CommandManagerInterface, RestInterface
     }
 
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @throws UidCannotBeRemovedException
-     * @throws UidNotFoundException
+     * @throws TrackerCannotBeRemovedException
+     * @throws TrackerNotFoundException
      */
-    public function delete(UidApiDtoInterface $dto): void
+    public function delete(TrackerApiDtoInterface $dto): void
     {
         $sid = $this->repository->find($dto->getId());
 

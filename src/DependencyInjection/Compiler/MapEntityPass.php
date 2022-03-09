@@ -1,10 +1,10 @@
 <?php
 
-namespace Demoniqus\UidBundle\DependencyInjection\Compiler;
+namespace Demoniqus\TrackerBundle\DependencyInjection\Compiler;
 
-use Demoniqus\UidBundle\DependencyInjection\EvrinomaUidExtension;
-use Demoniqus\UidBundle\EvrinomaUidBundle;
-use Demoniqus\UidBundle\Model\Uid\UidInterface;
+use Demoniqus\TrackerBundle\DependencyInjection\DemoniqusTrackerExtension;
+use Demoniqus\TrackerBundle\DemoniqusTrackerBundle;
+use Demoniqus\TrackerBundle\Model\Tracker\TrackerInterface;
 use Evrinoma\UtilsBundle\DependencyInjection\Compiler\AbstractMapEntity;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -15,6 +15,7 @@ class MapEntityPass extends AbstractMapEntity implements CompilerPassInterface
 //region SECTION: Public
     /**
      * @inheritDoc
+     * @throws \Evrinoma\UtilsBundle\Exception\MapEntityCannotBeCompiledException
      */
     public function process(ContainerBuilder $container)
     {
@@ -23,17 +24,17 @@ class MapEntityPass extends AbstractMapEntity implements CompilerPassInterface
         $driver                    = $container->findDefinition('doctrine.orm.default_metadata_driver');
         $referenceAnnotationReader = new Reference('annotations.reader');
 
-        $this->cleanMetadata($driver, [EvrinomaUidExtension::ENTITY]);
+        $this->cleanMetadata($driver, [DemoniqusTrackerExtension::ENTITY]);
 
-        $entity = $container->getParameter(EvrinomaUidBundle::VENDOR_PREFIX_LC . '.' . EvrinomaUidBundle::UID_LC . '.entity');
-        if ((strpos($entity, EvrinomaUidExtension::ENTITY) !== false)) {
+        $entity = $container->getParameter(DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '.' . DemoniqusTrackerBundle::TRACKER_LC . '.entity');
+        if ((strpos($entity, DemoniqusTrackerExtension::ENTITY) !== false)) {
             $this->loadMetadata(
                 $driver,
                 $referenceAnnotationReader,
-                '%s/Model/' . EvrinomaUidBundle::UID_CC,
-                '%s/Entity/' . EvrinomaUidBundle::UID_CC
+                '%s/Model/' . DemoniqusTrackerBundle::TRACKER_CC,
+                '%s/Entity/' . DemoniqusTrackerBundle::TRACKER_CC
             );
-            $this->addResolveTargetEntity([$entity => [UidInterface::class => [],],], false);
+            $this->addResolveTargetEntity([$entity => [TrackerInterface::class => [],],], false);
         }
     }
 //endregion Public

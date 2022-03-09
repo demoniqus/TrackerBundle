@@ -1,11 +1,12 @@
 <?php
 
 
-namespace Demoniqus\UidBundle\Mediator;
+namespace Demoniqus\TrackerBundle\Mediator;
 
 
-use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
-use Demoniqus\UidBundle\Repository\AliasInterface;
+use Demoniqus\TrackerBundle\Dto\TrackerApiDtoInterface;
+use Demoniqus\TrackerBundle\Model\ModelInterface;
+use Demoniqus\TrackerBundle\Repository\AliasInterface;
 use Doctrine\ORM\QueryBuilder;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\UtilsBundle\Mediator\AbstractQueryMediator;
@@ -13,7 +14,7 @@ use Evrinoma\UtilsBundle\Mediator\AbstractQueryMediator;
 class QueryMediator extends AbstractQueryMediator implements QueryMediatorInterface
 {
 //region SECTION: Fields
-    protected static string $alias = AliasInterface::UID;
+    protected static string $alias = AliasInterface::TRACKER;
 //endregion Fields
 
 //region SECTION: Public
@@ -27,22 +28,22 @@ class QueryMediator extends AbstractQueryMediator implements QueryMediatorInterf
     {
         $alias = $this->alias();
 
-        /** @var $dto UidApiDtoInterface */
+        /** @var $dto TrackerApiDtoInterface */
         if ($dto->hasId()) {
             $builder
-                ->andWhere($alias . '.id = :id')
+                ->andWhere($alias . '.' . ModelInterface::ID .' = :id')
                 ->setParameter('id', $dto->getId());
         }
 
-        if ($dto->hasUid()) {
+        if ($dto->hasTrack()) {
             $builder
-                ->andWhere($alias . '.uid = :uid')
-                ->setParameter('uid', $dto->getUid());
+                ->andWhere($alias . '.' . ModelInterface::TRACK . ' = :track')
+                ->setParameter('track', $dto->getTrack());
         }
 
         if ($dto->hasActive()) {
             $builder
-                ->andWhere($alias . '.active = :active')
+                ->andWhere($alias . '.' . ModelInterface::ACTIVE . ' = :active')
                 ->setParameter('active', $dto->getActive());
         }
     }

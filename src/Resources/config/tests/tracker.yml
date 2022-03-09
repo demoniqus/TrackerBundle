@@ -1,0 +1,9 @@
+services:
+  demoniqus.tracker.test.functional.action.tracker:
+    class: Demoniqus\TrackerBundle\Tests\Functional\Action\BaseTracker
+    public: true
+    arguments:
+
+  Demoniqus\TrackerBundle\Tests\Functional\Action\BaseTracker:
+    alias: demoniqus.tracker.test.functional.action.tracker
+    public: true

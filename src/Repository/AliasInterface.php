@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Demoniqus\UidBundle\Repository;
+namespace Demoniqus\TrackerBundle\Repository;
 
 
 interface AliasInterface
 {
 //region SECTION:Public
-    public const UID = 'uid';
+    public const TRACKER = 'tracker';
 //endregion Public
 }

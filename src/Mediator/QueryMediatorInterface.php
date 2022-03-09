@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Demoniqus\UidBundle\Mediator;
+namespace Demoniqus\TrackerBundle\Mediator;
 
-use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
+use Demoniqus\TrackerBundle\Dto\TrackerApiDtoInterface;
 use Doctrine\ORM\QueryBuilder;
 
 
@@ -13,17 +13,17 @@ interface QueryMediatorInterface
     public function alias(): string;
 
     /**
-     * @param UidApiDtoInterface $dto
-     * @param QueryBuilder            $builder
+     * @param TrackerApiDtoInterface $dto
+     * @param QueryBuilder           $builder
      */
-    public function createQuery(UidApiDtoInterface $dto, QueryBuilder $builder): void;
+    public function createQuery(TrackerApiDtoInterface $dto, QueryBuilder $builder): void;
 //endregion Public
 //region SECTION: Getters/Setters
     /**
-     * @param UidApiDtoInterface $dto
-     * @param QueryBuilder            $builder
+     * @param TrackerApiDtoInterface $dto
+     * @param QueryBuilder           $builder
      * @return array
      */
-    public function getResult(UidApiDtoInterface $dto, QueryBuilder $builder): array;
+    public function getResult(TrackerApiDtoInterface $dto, QueryBuilder $builder): array;
 //endregion Getters/Setters
 }

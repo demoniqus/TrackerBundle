@@ -1,2 +1,2 @@
 imports:
-  - { resource: tests/uid.yml }
+  - { resource: tests/tracker.yml }

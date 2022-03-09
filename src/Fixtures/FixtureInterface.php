@@ -1,11 +1,10 @@
 <?php
 
-namespace Demoniqus\UidBundle\Fixtures;
+namespace Demoniqus\TrackerBundle\Fixtures;
 
 interface FixtureInterface
 {
 //region SECTION:Fields
-//    public const STRATEGY_FIXTURES = 'STRATEGY_FIXTURES';
-    public const UID_FIXTURES = 'UID_FIXTURES';
+    public const TRACKER_FIXTURES = 'TRACKER_FIXTURES';
 //endregion Fields
 }

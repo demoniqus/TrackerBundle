@@ -1,0 +1,67 @@
+services:
+  Demoniqus\TrackerBundle\Controller\TrackerApiController:
+    alias: demoniqus.tracker.api.controller
+    public: true
+
+  demoniqus.tracker.api.controller:
+    class: Demoniqus\TrackerBundle\Controller\TrackerApiController
+    arguments:
+      - '@jms_serializer'
+      - '@request_stack'
+      - '@evrinoma.dto.factory'
+      - '@demoniqus.tracker.command.manager'
+      - '@demoniqus.tracker.query.manager'
+    autowire: true
+
+  demoniqus.tracker.factory:
+    class: Demoniqus\TrackerBundle\Factory\TrackerFactory
+    public: true
+    arguments:
+
+  demoniqus.tracker.repository:
+    class: Demoniqus\TrackerBundle\Repository\TrackerRepository
+    public: true
+    arguments:
+
+  demoniqus.tracker.command.manager:
+    class: Demoniqus\TrackerBundle\Manager\CommandManager
+    arguments:
+      - '@demoniqus.tracker.validator'
+      - '@demoniqus.tracker.repository'
+      - '@demoniqus.tracker.factory'
+      - '@demoniqus.tracker.command.mediator'
+
+  demoniqus.tracker.query.manager:
+    class: Demoniqus\TrackerBundle\Manager\QueryManager
+    arguments:
+      - '@demoniqus.tracker.repository'
+
+  demoniqus.tracker.validator:
+    class: Demoniqus\TrackerBundle\Validator\TrackerValidator
+    public: true
+    arguments:
+
+  Demoniqus\TrackerBundle\Validator\TrackerValidator:
+    alias: demoniqus.tracker.validator
+
+  demoniqus.tracker.query.mediator:
+    class: Demoniqus\TrackerBundle\Mediator\QueryMediator
+    public: true
+    arguments:
+
+  Demoniqus\TrackerBundle\Mediator\QueryMediator:
+    alias: demoniqus.tracker.query.mediator
+
+  Demoniqus\TrackerBundle\Mediator\QueryMediatorInterface:
+    alias: demoniqus.tracker.query.mediator
+
+  demoniqus.tracker.command.mediator:
+    class: Demoniqus\TrackerBundle\Mediator\CommandMediator
+    public: true
+    arguments:
+
+  Demoniqus\TrackerBundle\Mediator\CommandMediator:
+    alias: demoniqus.tracker.command.mediator
+
+  Demoniqus\TrackerBundle\Mediator\CommandMediatorInterface:
+    alias: demoniqus.tracker.command.mediator

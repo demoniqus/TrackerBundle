@@ -1,6 +1,6 @@
 <?php
 
-namespace Demoniqus\UidBundle\Model;
+namespace Demoniqus\TrackerBundle\Model;
 
 
 interface ModelInterface
@@ -9,6 +9,6 @@ interface ModelInterface
     public const ID     = 'id';
     public const NAME   = 'name';
     public const ACTIVE = 'active';
-    public const UID    = 'uid';
+    public const TRACK  = 'track';
 //endregion Fields
 }

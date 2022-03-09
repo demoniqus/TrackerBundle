@@ -1,12 +1,12 @@
 <?php
 
-namespace Demoniqus\UidBundle\Manager;
+namespace Demoniqus\TrackerBundle\Manager;
 
-use Demoniqus\UidBundle\Exception\UidProxyException;
-use Demoniqus\UidBundle\Dto\UidApiDtoInterface;
-use Demoniqus\UidBundle\Exception\UidNotFoundException;
-use Demoniqus\UidBundle\Model\Uid\UidInterface;
-use Demoniqus\UidBundle\Repository\UidQueryRepositoryInterface;
+use Demoniqus\TrackerBundle\Exception\TrackerProxyException;
+use Demoniqus\TrackerBundle\Dto\TrackerApiDtoInterface;
+use Demoniqus\TrackerBundle\Exception\TrackerNotFoundException;
+use Demoniqus\TrackerBundle\Model\Tracker\TrackerInterface;
+use Demoniqus\TrackerBundle\Repository\TrackerQueryRepositoryInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 
@@ -15,11 +15,11 @@ final class QueryManager implements QueryManagerInterface, RestInterface
     use RestTrait;
 
 //region SECTION: Fields
-    private UidQueryRepositoryInterface $repository;
+    private TrackerQueryRepositoryInterface $repository;
 //endregion Fields
 
 //region SECTION: Constructor
-    public function __construct(UidQueryRepositoryInterface $repository)
+    public function __construct(TrackerQueryRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }
@@ -27,29 +27,29 @@ final class QueryManager implements QueryManagerInterface, RestInterface
 
 //region SECTION: Public
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
      * @return array
-     * @throws UidNotFoundException
+     * @throws TrackerNotFoundException
      */
-    public function criteria(UidApiDtoInterface $dto): array
+    public function criteria(TrackerApiDtoInterface $dto): array
     {
         return $this->repository->findByCriteria($dto);
     }
 
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidProxyException
+     * @return TrackerInterface
+     * @throws TrackerProxyException
      */
-    public function proxy(UidApiDtoInterface $dto): UidInterface
+    public function proxy(TrackerApiDtoInterface $dto): TrackerInterface
     {
         if ($dto->hasId()) {
             $uid = $this->repository->proxy($dto->getId());
         }
         else {
-            throw new UidProxyException("Id value is not set while trying get proxy object");
+            throw new TrackerProxyException("Id value is not set while trying get proxy object");
         }
 
         return $uid;
@@ -63,12 +63,12 @@ final class QueryManager implements QueryManagerInterface, RestInterface
     }
 
     /**
-     * @param UidApiDtoInterface $dto
+     * @param TrackerApiDtoInterface $dto
      *
-     * @return UidInterface
-     * @throws UidNotFoundException
+     * @return TrackerInterface
+     * @throws TrackerNotFoundException
      */
-    public function get(UidApiDtoInterface $dto): UidInterface
+    public function get(TrackerApiDtoInterface $dto): TrackerInterface
     {
         return $this->repository->find($dto->getId());
     }

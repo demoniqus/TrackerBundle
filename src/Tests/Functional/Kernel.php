@@ -1,8 +1,8 @@
 <?php
 
-namespace Demoniqus\UidBundle\Tests\Functional;
+namespace Demoniqus\TrackerBundle\Tests\Functional;
 
-use Demoniqus\UidBundle\EvrinomaUidBundle;
+use Demoniqus\TrackerBundle\DemoniqusTrackerBundle;
 use Evrinoma\TestUtilsBundle\Kernel\AbstractApiKernel;
 
 /**
@@ -11,7 +11,7 @@ use Evrinoma\TestUtilsBundle\Kernel\AbstractApiKernel;
 class Kernel extends AbstractApiKernel
 {
 //region SECTION: Fields
-    protected string $bundlePrefix = EvrinomaUidBundle::UID_BUNDLE_CC;
+    protected string $bundlePrefix = DemoniqusTrackerBundle::TRACKER_BUNDLE_CC;
     protected string $rootDir = __DIR__;
 //endregion Fields
 
@@ -21,7 +21,7 @@ class Kernel extends AbstractApiKernel
      */
     public function registerBundles()
     {
-        return array_merge(parent::registerBundles(), [new \Evrinoma\DtoBundle\EvrinomaDtoBundle(), new \Evrinoma\UidBundle\EvrinomaUidBundle()]);
+        return array_merge(parent::registerBundles(), [new \Evrinoma\DtoBundle\EvrinomaDtoBundle(), new \Demoniqus\TrackerBundle\DemoniqusTrackerBundle()]);
     }
 
     protected function getBundleConfig(): array

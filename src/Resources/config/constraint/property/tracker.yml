@@ -1,0 +1,5 @@
+services:
+  demoniqus.tracker.constraint.property.track:
+    class: Demoniqus\TrackerBundle\Constraint\Property\Track
+  demoniqus.tracker.constraint.property.active:
+    class: Demoniqus\TrackerBundle\Constraint\Property\Active

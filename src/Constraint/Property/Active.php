@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Demoniqus\UidBundle\Constraint\Property;
+namespace Demoniqus\TrackerBundle\Constraint\Property;
 
 
 use Evrinoma\UtilsBundle\Constraint\Property\ActiveTrait;
