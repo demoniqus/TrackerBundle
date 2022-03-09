@@ -19,7 +19,7 @@ class BaseTracker extends AbstractServiceTest implements BaseTrackerTestInterfac
     use BaseTrackerTestTrait;
 
 //region SECTION: Fields
-    private const API_PREFIX = DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '/api/' . DemoniqusTrackerBundle::TRACKER_LC;
+    protected const API_PREFIX = DemoniqusTrackerBundle::VENDOR_PREFIX_LC . '/api/' . DemoniqusTrackerBundle::TRACKER_LC;
     public const API_GET      = self::API_PREFIX;
     public const API_CRITERIA = self::API_PREFIX . '/criteria';
     public const API_DELETE   = self::API_PREFIX . '/delete';
