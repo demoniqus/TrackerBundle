@@ -15,7 +15,7 @@ Actions в контроллере разбиты на две группы
 создание, удаление данных
 
         1. postAction(POST), deleteAction(DELETE)
-получение данных
+Получение данных
 
         2. getAction(GET), criteriaAction(GET)
 
