@@ -1,4 +1,4 @@
-Demoniqus\TrackerBundle\Model\Tracker\AbstractTrack:
+Demoniqus\TrackerBundle\Model\Tracker\AbstractTracker:
   exclusion_policy: ALL
   properties:
     id:
