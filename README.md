@@ -12,14 +12,14 @@
 # CQRS model
 
 Actions в контроллере разбиты на две группы
-создание, удаление данных
+	- Создание, удаление данных
 
-        1. postAction(POST), deleteAction(DELETE)
-получение данных
+        	1. postAction(POST), deleteAction(DELETE)
+	- Получение данных
 
-        2. getAction(GET), criteriaAction(GET)
+        	2. getAction(GET), criteriaAction(GET)
 
-Редактирование сущности Tracker не подразумевается
+	- Редактирование сущности Tracker не подразумевается
 
 Каждый метод работает со своим менеджером
 
